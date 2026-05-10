@@ -1,0 +1,82 @@
+/* OpenGrok theme override: Synthwave 84 */
+:root {
+ --og-bg:#171022;
+ --og-bg-soft:#241b3b;
+ --og-panel:#2b2146;
+ --og-panel-alt:#322653;
+ --og-border:#6e4cc8;
+ --og-text:#f5e9ff;
+ --og-muted:#a99bc8;
+ --og-link:#36f9f6;
+ --og-link-hover:#ff7edb;
+ --og-accent:#ff2bd6;
+ --og-heading:#fede5d;
+ --og-keyword:#ff7edb;
+ --og-string:#fede5d;
+ --og-comment:#8f83b8;
+ --og-number:#ffb86c;
+ --og-symbol:#b893ff;
+ --og-function:#36f9f6;
+ --og-field:#72f1b8;
+ --og-error:#ff6e6e;
+ --og-selection:#46306f;
+ --og-highlight:rgba(255,126,219,.35)
+}
+html,body,#page,#content,#results,#more,.content,.markdown {
+ background:var(--og-bg)!important;
+ color:var(--og-text)!important
+}
+a,a:link,a:visited,a:active { color:var(--og-link)!important }
+a:hover { color:var(--og-link-hover)!important; text-shadow:0 0 8px color-mix(in srgb,var(--og-link-hover),transparent 45%) }
+html.xref #whole_header,html.history #whole_header,html.more #whole_header,html.diff #whole_header,#whole_header,#Masthead,#sbar,#bar,footer#footer {
+ background:var(--og-panel)!important;
+ color:var(--og-text)!important;
+ border-color:var(--og-accent)!important
+}
+#sbar,#bar { border-top-color:var(--og-accent)!important }
+#Masthead,#filename { color:var(--og-heading)!important }
+table,thead,tbody,tr,td,th,.panel,.panel>.panel-heading,.panel>.panel-heading-accordion,.panel>.panel-body,.panel>.panel-body-accordion {
+ background-color:var(--og-panel)!important;
+ color:var(--og-text)!important;
+ border-color:var(--og-border)!important
+}
+thead,#dirlist thead tr,#results .dir { background-color:var(--og-panel-alt)!important; color:var(--og-heading)!important }
+tbody:not(.search-result) tr:nth-child(EVEN),.search-result-even-row,table#dirlist tbody tr:nth-child(even) { background-color:var(--og-panel-alt)!important }
+table#dirlist tbody tr:hover,#results tr:hover,#revisions tr:hover { background-color:var(--og-selection)!important }
+input,select,textarea,button,.btn,input.q,#qtbl input.q,#qtbl select.q {
+ background-color:var(--og-bg-soft)!important;
+ color:var(--og-text)!important;
+ border:1px solid var(--og-border)!important
+}
+input:focus,select:focus,textarea:focus {
+ border-color:var(--og-link)!important;
+ outline:0;
+ box-shadow:0 0 0 2px color-mix(in srgb,var(--og-link),transparent 78%)
+}
+input.submit,button,.btn { background:var(--og-panel-alt)!important; color:var(--og-link)!important }
+pre,code,samp,div[id^='src'],div[id^='src'] pre { background:var(--og-bg)!important; color:var(--og-text)!important }
+.l,.hl,.blame .r,.blame .a,#results .l,#more .l,#difftable .it,del.d {
+ background-color:var(--og-bg-soft)!important;
+ color:var(--og-muted)!important;
+ border-right:1px solid var(--og-border)
+}
+div[id^='src'] a.l:target,div[id^='src'] a.hl:target,div[id^='src'] a.l.target,div[id^='src'] a.hl.target {
+ background:var(--og-accent)!important;
+ color:var(--og-bg)!important
+}
+div[id^='src'] .n { color:var(--og-number)!important }
+div[id^='src'] .s,#results .s,#more .s { color:var(--og-string)!important }
+div[id^='src'] .c { color:var(--og-comment)!important; font-style:italic }
+div[id^='src'] .b,div[id^='src'] .k,div[id^='src'] b { color:var(--og-keyword)!important; font-weight:bold }
+div[id^='src'] a.d,a.xc,a.xp,a.xi,a.xn,a.xe,a.xer,a.xs,a.xt,a.xts,a.xu { color:var(--og-symbol)!important; font-weight:bold }
+a.xlbl { color:var(--og-bg)!important; background-color:var(--og-heading)!important }
+a.xm,a.xa,a.xl,a.xv { color:var(--og-accent)!important; font-weight:bold }
+a.xfld,a.xmb { color:var(--og-field)!important; font-weight:bold }
+a.xf,a.xmt,a.xsr,a.scope { color:var(--og-function)!important; font-weight:bold }
+.symbol-highlighted,.symbol-highlighted.hightlight-color-1,.symbol-highlighted.hightlight-color-2,.symbol-highlighted.hightlight-color-3 { background-color:var(--og-highlight)!important }
+.error,.diff_navigation .error { color:var(--og-error)!important }
+ins,ins.a,.added { background-color:color-mix(in srgb,var(--og-field),transparent 82%)!important; color:var(--og-field)!important }
+del,del.d,.removed { background-color:color-mix(in srgb,var(--og-error),transparent 86%)!important; color:var(--og-error)!important }
+.logo-gray-color { color:var(--og-symbol)!important }
+.logo-blue-color { color:var(--og-link)!important }
+caption,span.simplified-path,.edited,#results .con,#results .more,#revisions .more { color:var(--og-muted)!important }
