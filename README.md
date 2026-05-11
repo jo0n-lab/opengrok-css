@@ -4,7 +4,7 @@ OpenGrok CSS theme patches and a small local verification harness.
 
 This repository does not fork OpenGrok UI code. It keeps OpenGrok's original stylesheet intact and appends small override files for dark/light themes, syntax colors, and an optional toolbar theme switcher.
 
-## What's Included
+## Included
 
 - `dist/default/style-1.0.4.css`: local working stylesheet, built from the original OpenGrok CSS plus a selected theme override.
 - `dist/default/style-1.0.4.original.css`: unmodified OpenGrok base stylesheet.
@@ -21,7 +21,7 @@ The default local theme is:
 material-deepforest-light
 ```
 
-It provides:
+Provides:
 
 - `dark`: Material Theme Deepforest
 - `light`: Material Theme Light
@@ -29,7 +29,7 @@ It provides:
 
 In UI terminology, that top-right area is commonly called `trailing actions`, `right-aligned toolbar actions`, or a `toolbar end slot`.
 
-## Apply A Theme Locally
+## Apply Local Theme
 
 ```sh
 ./scripts/apply-theme.sh material-deepforest-light
@@ -59,42 +59,6 @@ from:
 dist/default/style-1.0.4.original.css
 + examples/themes/<theme>.css
 ```
-
-## Local Verification
-
-Prepare any source tree for OpenGrok to index. By default the script expects:
-
-```text
-src/openfoam-dev
-```
-
-Example:
-
-```sh
-mkdir -p src
-git clone <your-source-repo> src/openfoam-dev
-./scripts/opengrok-dev-up.sh
-```
-
-Or point to a source tree outside this repository:
-
-```sh
-OPENGROK_SOURCE_DIR=/path/to/source ./scripts/opengrok-dev-up.sh
-```
-
-Open:
-
-```text
-http://localhost:8081/xref/openfoam-dev/
-```
-
-The unmodified OpenGrok container is available at:
-
-```text
-http://localhost:8080/
-```
-
-CSS changes do not require reindexing. Edit `dist/default/style-1.0.4.css` and refresh the browser.
 
 ## Production Patch From OpenGrok Source
 
@@ -244,14 +208,6 @@ variable                       -> a.xv
 variable.other.member          -> a.xfld, a.xmb
 entity.name.tag, meta.macro    -> a.xm
 ```
-
-## Spacing Terminology
-
-- `padding`: inner space inside a control or container
-- `margin`: outer space around an element
-- `gap`: space between flex/grid children
-- `gutter`: repeated spacing between columns or major layout tracks
-- `alignment`: how items sit along the row or column axis
 
 ## Reindex
 
